@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --ink: 10 10 10; /* near-black background */
+  --paper: 238 235 228; /* off-white text */
+  --accent: 255 122 69; /* overridden from content/chapters.ts */
+  --pad: clamp(1rem, 2.4vw, 2.25rem);
+  color-scheme: dark;
+}
+
+@layer base {
+  html { background: rgb(var(--ink)); -webkit-text-size-adjust: 100%; }
+  body { @apply bg-ink font-sans text-[15px] leading-relaxed text-paper antialiased; }
+  ::selection { background: rgb(var(--accent)); color: #0a0a0a; }
+  :focus-visible { outline: 2px solid rgb(var(--accent)); outline-offset: 4px; }
+  h1, h2, h3 { font-weight: 500; }
+}
+
+@layer components {
+  .label { @apply font-sans text-label uppercase; }
+  .u-link {
+    background: linear-gradient(currentColor, currentColor) 0 100% / 0% 1px no-repeat;
+    transition: background-size 0.5s theme("transitionTimingFunction.out");
+  }
+  .u-link:hover, .u-link:focus-visible, .u-link[aria-current="page"] { background-size: 100% 1px; }
+  .todo { @apply rounded-sm border border-dashed border-accent px-1.5 text-accent; }
+}
+
+/* Home is one fixed screen: no page scroll. */
+html.is-home, html.is-home body { height: 100%; overflow: hidden; overscroll-behavior: none; }
+
+/* Custom cursor (desktop only, set from JS) */
+html.has-cursor, html.has-cursor * { cursor: none !important; }
+
+.carousel-img { -webkit-user-drag: none; user-select: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
