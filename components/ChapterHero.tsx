@@ -26,7 +26,7 @@ export default function ChapterHero({ chapter }: { chapter: Chapter }) {
       animate={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
     >
-      <SmartImage src={chapter.image} alt={`${chapter.title}: hero image`} seed={chapter.slug} priority sizes="100vw" />
+      <SmartImage src={chapter.image} alt={`${chapter.title}: hero image`} seed={chapter.slug} priority sizes="100vw" style={{ objectPosition: chapter.position }} />
       <div aria-hidden className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-ink/70 to-transparent" />
     </motion.div>
   );

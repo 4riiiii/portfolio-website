@@ -6,7 +6,7 @@ import { motion, useReducedMotion } from "framer-motion";
 import { transitionState } from "@/lib/transitionState";
 
 type Rect = { top: number; left: number; width: number; height: number };
-type T = { slug: string; src: string; from: Rect; to: Rect };
+type T = { slug: string; src: string; pos?: string; from: Rect; to: Rect };
 type Phase = "grow" | "wait" | "fade";
 
 const Ctx = createContext<{ open: (slug: string, frame: HTMLElement) => void }>({ open: () => {} });
@@ -44,6 +44,7 @@ export function TransitionProvider({ children }: { children: React.ReactNode }) 
       setT({
         slug,
         src: img.currentSrc || img.src,
+        pos: frame.dataset.pos,
         from: { top: r.top, left: r.left, width: r.width, height: r.height },
         to: { top: 0, left: 0, width: window.innerWidth, height: window.innerHeight * HERO_VH },
       });
@@ -86,7 +87,7 @@ export function TransitionProvider({ children }: { children: React.ReactNode }) 
           }}
         >
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={t.src} alt="" className="h-full w-full object-cover" draggable={false} />
+          <img src={t.src} alt="" className="h-full w-full object-cover" style={{ objectPosition: t.pos }} draggable={false} />
         </motion.div>
       )}
     </Ctx.Provider>

@@ -228,6 +228,7 @@ export default function Carousel({ chapters }: { chapters: Chapter[] }) {
                 <div
                   ref={(r) => { frames.current[i] = r; }}
                   className="relative overflow-hidden bg-paper/5"
+                  data-pos={c.position}
                   style={{ height: SSR_LAYOUT.sh }}
                 >
                   <div ref={(r) => { pars.current[i] = r; }} className="absolute inset-0 will-change-transform">
@@ -238,6 +239,7 @@ export default function Carousel({ chapters }: { chapters: Chapter[] }) {
                       sizes="(min-width: 768px) 32vw, 72vw"
                       priority={i < 3}
                       className="carousel-img brightness-[0.82] transition-[filter] duration-500 ease-out group-hover:brightness-100"
+                      style={{ objectPosition: c.position }}
                     />
                   </div>
                 </div>

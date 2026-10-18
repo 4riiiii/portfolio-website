@@ -15,7 +15,7 @@ export default function OG() {
         <div style={{ display: "flex", fontSize: 24, letterSpacing: 5, textTransform: "uppercase", color: theme.accent }}>Chapters</div>
         <div style={{ display: "flex", flexDirection: "column" }}>
           <div style={{ display: "flex", fontSize: 260, lineHeight: 0.85, letterSpacing: -12, fontWeight: 700 }}>ARIKA</div>
-          <div style={{ display: "flex", fontSize: 30, marginTop: 28, maxWidth: 900 }}>Software engineer, builder and community leader. Jamshedpur to Dublin.</div>
+          <div style={{ display: "flex", fontSize: 30, marginTop: 28, maxWidth: 900 }}>Software engineer, builder and community leader. Delhi to Dublin.</div>
         </div>
       </div>
     ),

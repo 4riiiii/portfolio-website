@@ -49,7 +49,7 @@ Slides are real links (keyboard: Tab to focus, ← → to move, Enter to open). 
 ## TODO list (for you)
 
 - [ ] Replace demo images (all chapters, gallery, About portrait)
-- [ ] Jamshedpur, Deoghar, Kitchen, Mountains: gallery captions
+- [ ] Deoghar, Kitchen, Mountains: gallery captions
 - [ ] Dockway: status + link · Mysl: live link · SentinelAI: repo link · Go North: stack + play link
 - [ ] Songs & Poems: lyrics / poems / voice memo in the notebook cards
 - [ ] Kitchen: favourite dish

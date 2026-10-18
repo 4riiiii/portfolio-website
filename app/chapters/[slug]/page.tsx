@@ -83,18 +83,34 @@ export default function ChapterPage({ params }: { params: Params }) {
       )}
 
       <section aria-label="Gallery" className="px-[var(--pad)] pb-20 md:pb-32">
-        <ul className="grid gap-4 md:grid-cols-2">
-          {c.gallery.map((g, k) => (
-            <li key={k} className={c.gallery.length % 2 === 1 && k === 0 ? "md:col-span-2" : ""}>
-              <FadeIn>
-                <div className={`relative w-full overflow-hidden bg-paper/5 ${c.gallery.length % 2 === 1 && k === 0 ? "aspect-[21/9]" : "aspect-[16/10]"}`}>
-                  <SmartImage src={g.src} alt={g.caption && !isTodo(g.caption) ? g.caption : `${c.title}: gallery image ${k + 1}`} seed={`${c.slug}-${k + 2}`} sizes="(min-width: 768px) 50vw, 100vw" />
-                </div>
-                {g.caption && <p className="label mt-3 text-paper/55"><Txt>{g.caption}</Txt></p>}
-              </FadeIn>
-            </li>
-          ))}
-        </ul>
+        {(() => {
+          const tall = c.galleryLayout === "portrait";
+          const n = c.gallery.length;
+          const grid = tall ? (n >= 3 ? "md:grid-cols-3" : "md:grid-cols-2") : "md:grid-cols-2";
+          return (
+            <ul className={`grid gap-4 ${grid}`}>
+              {c.gallery.map((g, k) => {
+                const wide = !tall && n % 2 === 1 && k === 0;
+                return (
+                  <li key={k} className={wide ? "md:col-span-2" : ""}>
+                    <FadeIn>
+                      <div className={`relative w-full overflow-hidden bg-paper/5 ${tall ? "aspect-[3/4]" : wide ? "aspect-[21/9]" : "aspect-[16/10]"}`}>
+                        <SmartImage
+                          src={g.src}
+                          alt={g.caption && !isTodo(g.caption) ? g.caption : `${c.title}: gallery image ${k + 1}`}
+                          seed={`${c.slug}-${k + 2}`}
+                          sizes={tall ? "(min-width: 768px) 33vw, 100vw" : "(min-width: 768px) 50vw, 100vw"}
+                          style={{ objectPosition: g.position }}
+                        />
+                      </div>
+                      {g.caption && <p className="label mt-3 text-paper/55"><Txt>{g.caption}</Txt></p>}
+                    </FadeIn>
+                  </li>
+                );
+              })}
+            </ul>
+          );
+        })()}
       </section>
 
       {c.links && c.links.length > 0 && (

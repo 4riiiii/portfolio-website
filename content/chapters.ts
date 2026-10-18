@@ -24,7 +24,7 @@ const galleryOf = (slug: string, n = 3, captions: string[] = []): GalleryImage[]
   }));
 
 // ── Types ────────────────────────────────────────────────────────────────────
-export type GalleryImage = { src: string; caption?: string };
+export type GalleryImage = { src: string; caption?: string; /** CSS object-position, e.g. "50% 30%" */ position?: string };
 export type LinkItem = { label: string; href: string; todo?: boolean };
 export type Fact = { label: string; value: string };
 
@@ -34,6 +34,10 @@ export type Chapter = {
   tag: string;
   /** Hero image: used on the carousel slide and the detail page. */
   image: string;
+  /** Optional CSS object-position for the hero crop, e.g. "50% 65%". */
+  position?: string;
+  /** "portrait" lays the gallery out as tall tiles (use for phone photos). Default: landscape. */
+  galleryLayout?: "portrait" | "landscape";
   /** "In a line" summary. */
   line: string;
   /** Short first-person paragraphs. */
@@ -55,7 +59,7 @@ export const site = {
   name: "Arika Kashyap",
   display: "ARIKA",
   description:
-    "Software engineer, builder and community leader from Jamshedpur, now in Dublin — collecting chapters, one project at a time.",
+    "Software engineer, builder and community leader from Delhi, now in Dublin — collecting chapters, one project at a time.",
   email: "arikakashyap911@gmail.com",
   github: "https://github.com/4riiiii",
   linkedin: "https://www.linkedin.com/in/arika-kashyap/",
@@ -73,20 +77,30 @@ export const nav = [
 // ── Chapters (carousel order) ────────────────────────────────────────────────
 export const chapters: Chapter[] = [
   {
-    slug: "jamshedpur",
-    title: "Jamshedpur",
+    slug: "delhi",
+    title: "Delhi",
     tag: "Roots",
-    image: demo("jamshedpur"),
-    line: "Where I grew up in India, and where everything started.",
+    image: "/chapters/delhi/hero.jpg",
+    position: "50% 62%",
+    galleryLayout: "portrait",
+    line: "Where I grew up, and where I first got curious about how things work.",
     paragraphs: [
-      "Jamshedpur is home. It's where I grew up, and it's where I first got curious about how things work and how to make them better.",
-      "Before university I also worked at Starbucks and Burger King in Delhi. Nothing teaches you hustle like a lunch rush, and I still lean on what those jobs taught me about staying calm, being quick and looking after the person in front of you.",
+      "Delhi is home. It's where I grew up, and where I first got curious about how things work and how to make them better.",
+      "I went to Delhi Public School, R.K. Puram, and spent most of those years either on the basketball court or at a Model UN conference, arguing about world problems in a borrowed blazer. Somewhere between the two, I learned how to compete, how to speak up, and how to lose without sulking (mostly).",
+      "It's where I learned I could eat chicken momos for the rest of my life and never complain. It's where I learned that some people feel like home. And it's where I figured out how a city can hold every version of you at once.",
+      "If you want to know me better, go visit Delhi.",
     ],
     facts: [
-      { label: "Place", value: "Jamshedpur, India" },
+      { label: "Place", value: "Delhi, India" },
+      { label: "School", value: "Delhi Public School, R.K. Puram" },
+      { label: "Growing up", value: "Basketball court & Model UN" },
       { label: "Earlier jobs", value: "Starbucks & Burger King, Delhi" },
     ],
-    gallery: galleryOf("jamshedpur", 3, ["TODO: caption", "TODO: caption", "TODO: caption"]),
+    gallery: [
+      { src: "/chapters/delhi/1.jpg", position: "50% 70%" },
+      { src: "/chapters/delhi/2.jpg", position: "50% 55%" },
+      { src: "/chapters/delhi/3.jpg", position: "50% 30%" },
+    ],
   },
   {
     slug: "ucd",
@@ -276,7 +290,7 @@ export const chapters: Chapter[] = [
     image: demo("deoghar"),
     line: "196 devices, a village classroom and the work I'm proudest of.",
     paragraphs: [
-      "Before any of the software, there was a device drive back home. We collected 196 devices from people who no longer needed them and gave them to people who did, and raised around €5,000 for internet and power, because a laptop with no connection is just a very flat paperweight.",
+      "Before any of the software, there was a device drive in India. We collected 196 devices from people who no longer needed them and gave them to people who did, and raised around €5,000 for internet and power, because a laptop with no connection is just a very flat paperweight.",
       "Then I went to Deoghar, a village, and stayed for more than three months to teach computer basics. Over 500 people came through, kids and older people alike. Some had never touched a computer. We started from 'this is how you turn it on'.",
       "I think about those months constantly. They're the reason I care so much about the person on the other side of the screen, and why I want the things I build to help someone land on their feet.",
     ],
