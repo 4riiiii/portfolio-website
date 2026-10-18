@@ -14,7 +14,7 @@ export default function AboutPage() {
         <FadeIn>
           <div className="relative aspect-[4/5] w-full overflow-hidden bg-paper/[0.06]">
             {about.portrait ? (
-              <SmartImage src={about.portrait} alt={`Portrait of ${site.name}`} seed="portrait" sizes="(min-width: 768px) 40vw, 100vw" />
+              <SmartImage src={about.portrait} alt={`Portrait of ${site.name}`} seed="portrait" sizes="(min-width: 768px) 40vw, 100vw" className="object-[50%_22%]" />
             ) : (
               <div role="img" aria-label="Portrait placeholder" className="absolute inset-0 flex items-end p-5">
                 <span className="label text-paper/50">{about.portraitLabel}</span>

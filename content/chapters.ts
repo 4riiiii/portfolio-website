@@ -357,13 +357,13 @@ export const chapters: Chapter[] = [
 export const about = {
   title: "About",
   portraitLabel: "Portrait placeholder",
-  // TODO: swap for a real portrait, e.g. "/about/portrait.jpg"
-  portrait: null as string | null,
+  portrait: "/about/portrait.jpg" as string | null,
   text: [
-    "I'm Arika, a Computer Science student at University College Dublin, from Jamshedpur in India and now based in Dublin.",
-    "I'm a software engineer and builder: I intern at Team Pumpkin, I'm building my own startup, Mysl, and I'm the elected Auditor of the UCD International Students Society.",
-    "On the side I write songs and poems, and I cook more than I probably should.",
-    "This site is a collection of chapters. Click around, and say hi if something catches your eye.",
+    "Hi, I'm Arika. I study Computer Science at UCD, I'm from Delhi, and Dublin's been home for a while now.",
+    "I genuinely love software. I build websites and apps, usually for problems my friends keep complaining about, in the hope that one of them actually changes something for someone. Some do, some live in my GitHub forever. That's the deal.",
+    "I'm also the Auditor of the UCD International Students Society, which mostly means I spend my days planning events, chasing sponsors, and trying to make 6,500 people from all over the world feel a little more at home.",
+    "When I'm not doing any of that, I write songs and poems. And when I'm really not doing anything, I scroll LinkedIn for fun. Yes, that's how bored I get.",
+    "This site is a bunch of chapters from my life so far. Click around, and if something catches your eye, say hi.",
   ],
 };
 
