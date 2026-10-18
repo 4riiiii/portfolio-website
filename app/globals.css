@@ -1,0 +1,128 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Design tokens ───────────────────────────────────────────────────────────
+   Colours are space-separated RGB channels so Tailwind can apply opacity.
+   --accent is injected from content/site.ts (theme.accent); the value below is
+   only a fallback. */
+:root {
+  --bg: 244 241 234; /* warm off-white */
+  --fg: 17 17 16; /* near-black */
+  --accent: 255 91 31;
+  --gutter: clamp(1.25rem, 3.2vw, 3rem);
+  color-scheme: light;
+}
+:root[data-theme="dark"] {
+  --bg: 14 14 13;
+  --fg: 237 234 227;
+  color-scheme: dark;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    --bg: 14 14 13;
+    --fg: 237 234 227;
+    color-scheme: dark;
+  }
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    scroll-behavior: auto;
+  }
+  body {
+    @apply bg-bg font-sans text-body text-fg antialiased;
+    transition: background-color 0.4s, color 0.4s;
+    overflow-x: hidden;
+  }
+  ::selection {
+    background: rgb(var(--accent));
+    color: #111110;
+  }
+  :focus-visible {
+    outline: 2px solid rgb(var(--accent));
+    outline-offset: 4px;
+    border-radius: 2px;
+  }
+  h1, h2, h3 {
+    font-weight: 400;
+  }
+}
+
+@layer components {
+  .wrap {
+    @apply mx-auto w-full max-w-[1800px] px-gutter;
+  }
+  .display {
+    @apply font-display;
+  }
+  .eyebrow {
+    @apply text-small uppercase tracking-[0.12em] text-fg/60;
+  }
+  .hairline {
+    @apply border-t border-fg/15;
+  }
+  .pill {
+    @apply inline-flex items-center rounded-full border border-fg/25 px-3 py-1 text-small;
+  }
+  /* animated underline for inline links */
+  .u-link {
+    background: linear-gradient(currentColor, currentColor) 0 100% / 100% 1px no-repeat;
+    transition: background-size 0.5s theme("transitionTimingFunction.out");
+  }
+  .u-link:hover {
+    background-size: 0% 1px;
+    background-position: 100% 100%;
+  }
+  .todo {
+    @apply rounded-sm border border-dashed border-accent px-1.5 text-accent;
+  }
+}
+
+/* ── Line-by-line reveal ─────────────────────────────────────────────────── */
+.rv-w {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: top;
+  padding: 0.12em 0.05em 0.2em;
+  margin: -0.12em -0.05em -0.2em;
+}
+.rv-i {
+  display: inline-block;
+  transform: translateY(118%);
+  transition: transform 1.1s theme("transitionTimingFunction.out");
+  transition-delay: var(--d, 0s);
+  will-change: transform;
+}
+.rv-on .rv-i {
+  transform: none;
+}
+.rv-em {
+  font-style: italic;
+  color: rgb(var(--accent));
+}
+
+/* Lenis */
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+.lenis.lenis-stopped { overflow: hidden; }
+
+@media (prefers-reduced-motion: reduce) {
+  .rv-i { transform: none !important; transition: none !important; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* custom cursor only where it makes sense */
+@media (hover: none), (pointer: coarse) {
+  .cursor-ring { display: none !important; }
+}
+
+dialog::backdrop {
+  background: rgb(0 0 0 / 0.55);
+  backdrop-filter: blur(6px);
+}
