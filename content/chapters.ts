@@ -207,7 +207,7 @@ export const chapters: Chapter[] = [
     title: "Part Time",
     tag: "Work",
     image: "/chapters/part-time/hero.jpg",
-    position: "50% 30%",
+    position: "30% 30%",
     galleryLayout: "natural",
     line: "Two part-time jobs alongside my degree: sales at CPM Ireland and software at Team Pumpkin.",
     paragraphs: [
