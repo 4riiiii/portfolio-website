@@ -93,7 +93,7 @@ export default function ChapterPage({ params }: { params: Params }) {
                           ))}
                         </ul>
                       )}
-                      {pr.links && pr.links.length > 0 && (
+                      {c.showProjectLinks !== false && pr.links && pr.links.length > 0 && (
                         <ul className="mt-5 flex flex-wrap gap-3">
                           {pr.links.map((l) => (
                             <li key={l.label}>

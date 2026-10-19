@@ -63,6 +63,8 @@ export type Chapter = {
   gallery: GalleryImage[];
   /** A list of projects shown on the chapter page (for combined chapters). */
   projects?: ProjectEntry[];
+  /** Set to false to hide the link buttons on a projects list (links stay in the data, ready to switch back on). */
+  showProjectLinks?: boolean;
   links?: LinkItem[];
   /** Placeholder cards for things you'll add later (lyrics, dishes…). */
   notebook?: { label: string; text: string }[];
@@ -238,6 +240,8 @@ export const chapters: Chapter[] = [
       { label: "Built with", value: "React · Python · FastAPI · Flask · Supabase" },
     ],
     gallery: [],
+    // Link buttons hidden for now. Set to true once the links are filled in.
+    showProjectLinks: false,
     projects: [
       {
         name: "Ghost Tabs",
