@@ -28,6 +28,19 @@ export type GalleryImage = { src: string; caption?: string; /** Natural aspect r
 export type LinkItem = { label: string; href: string; todo?: boolean };
 export type Fact = { label: string; value: string };
 
+/** One project inside a combined "projects" chapter. */
+export type ProjectEntry = {
+  name: string;
+  /** Short category, e.g. "Chrome extension". */
+  tag: string;
+  blurb: string;
+  stack?: string[];
+  status?: string;
+  /** Marks the newest project. */
+  latest?: boolean;
+  links?: LinkItem[];
+};
+
 export type Chapter = {
   slug: string;
   title: string;
@@ -48,6 +61,8 @@ export type Chapter = {
   paragraphs: string[];
   facts: Fact[];
   gallery: GalleryImage[];
+  /** A list of projects shown on the chapter page (for combined chapters). */
+  projects?: ProjectEntry[];
   links?: LinkItem[];
   /** Placeholder cards for things you'll add later (lyrics, dishes…). */
   notebook?: { label: string; text: string }[];
@@ -207,103 +222,82 @@ export const chapters: Chapter[] = [
     gallery: [{ src: "/chapters/part-time/1.jpg", ratio: "3 / 4" }],
   },
   {
-    slug: "mysl",
-    title: "Mysl",
-    tag: "Startup",
-    image: demo("mysl"),
-    line: "My startup: an AI productivity companion.",
+    slug: "projects",
+    title: "Projects",
+    tag: "Builds",
+    image: "/chapters/projects/hero.jpg",
+    position: "20% 35%",
+    line: "Everything I've built, newest first.",
     paragraphs: [
-      "Mysl is the thing I'm building on the side of everything else: an AI productivity companion. It's built on React, FastAPI, Supabase and the Claude API.",
-      "So far I've built and launched the waitlist landing page, complete with a WebGL brain animation. The product itself is still very much a work in progress, and I'm enjoying every messy step of it.",
+      "These are the things I've built, newest first. Some are startups, some won hackathons, and some live in my GitHub forever. That's the deal.",
     ],
     facts: [
-      { label: "Type", value: "Startup" },
-      { label: "Stack", value: "React, FastAPI, Supabase, Claude API" },
-      { label: "Shipped", value: "Waitlist landing page with WebGL brain animation" },
+      { label: "Latest", value: "Ghost Tabs, a Chrome extension" },
+      { label: "Projects", value: "6" },
+      { label: "Won", value: "PITCH Makerthon (Go North)" },
+      { label: "Built with", value: "React · Python · FastAPI · Flask · Supabase" },
     ],
-    gallery: galleryOf("mysl", 3),
-    links: [
-      // TODO: add the live Mysl URL, then delete `todo: true`.
-      { label: "Visit Mysl", href: "#", todo: true },
-    ],
-  },
-  {
-    slug: "dockway",
-    title: "Dockway",
-    tag: "Product",
-    image: demo("dockway"),
-    line: "Peer-to-peer guidance for international students moving to Ireland.",
-    paragraphs: [
-      "Dockway was born from my own experience moving to Ireland. There are a hundred small questions when you arrive and no single place that answers them well.",
-      "So it's a peer-to-peer guidance platform: international students helping the next wave of international students. Built with React and Supabase.",
-    ],
-    facts: [
-      { label: "Type", value: "Peer-to-peer guidance platform" },
-      { label: "Stack", value: "React, Supabase" },
-      { label: "Status", value: "TODO: status" },
-    ],
-    gallery: galleryOf("dockway", 3),
-    links: [
-      // TODO: add the Dockway link, then delete `todo: true`.
-      { label: "View Dockway", href: "#", todo: true },
-    ],
-  },
-  {
-    slug: "sentinelai",
-    title: "SentinelAI",
-    tag: "Hackathon",
-    image: demo("sentinelai"),
-    line: "A multi-agent tool for monitoring brand and data exposure.",
-    paragraphs: [
-      "SentinelAI was a hackathon build: a team of cooperating AI agents that keep watch for brand and data exposure, so nobody has to find out the hard way.",
-      "It runs on Python and FastAPI, with Google ADK coordinating the agents and the Gemini API doing the thinking.",
-    ],
-    facts: [
-      { label: "Type", value: "Hackathon build" },
-      { label: "Stack", value: "Python, FastAPI, Google ADK, Gemini API" },
-    ],
-    gallery: galleryOf("sentinelai", 3),
-    links: [
-      // TODO: add the SentinelAI repo link, then delete `todo: true`.
-      { label: "View repo", href: "#", todo: true },
-    ],
-  },
-  {
-    slug: "personasim",
-    title: "PersonaSim",
-    tag: "AI Safety",
-    image: demo("personasim"),
-    line: "Simulating vulnerable personas to catch harmful AI responses.",
-    paragraphs: [
-      "A chatbot doesn't land the same way with everyone. PersonaSim is a Flask tool that simulates vulnerable personas talking to an LLM, then classifies the responses that turn out to be harmful.",
-      "It's a small project with a question I care about: who gets hurt when an AI gets it wrong, and can we find out before they do?",
-    ],
-    facts: [
-      { label: "Type", value: "AI safety experiment" },
-      { label: "Stack", value: "Python, Flask" },
-    ],
-    gallery: galleryOf("personasim", 3),
-    links: [{ label: "See it on GitHub", href: "https://github.com/4riiiii" }],
-  },
-  {
-    slug: "go-north",
-    title: "Go North",
-    tag: "Game",
-    image: demo("go-north"),
-    line: "The winning game at the PITCH makerthon.",
-    paragraphs: [
-      "Go North is a mystery space game where there's only one rule: keep heading north. Along the way you slay monsters, which show up as small blips.",
-      "It won the PITCH makerthon, which I'm still a little giddy about.",
-    ],
-    facts: [
-      { label: "Event", value: "PITCH makerthon" },
-      { label: "Result", value: "Winner" },
-      { label: "Stack", value: "TODO: stack" },
-    ],
-    gallery: galleryOf("go-north", 3),
-    links: [
-      // TODO: add the play link, then delete `todo: true`.
-      { label: "Play Go North", href: "#", todo: true },
+    gallery: [],
+    projects: [
+      {
+        name: "Ghost Tabs",
+        tag: "Chrome extension",
+        latest: true,
+        blurb: "A Chrome extension that fades the tabs that haven't been running for a long time.",
+        stack: ["TODO: stack"],
+        links: [
+          // TODO: add the Ghost Tabs link (Chrome Web Store or repo), then delete `todo: true`.
+          { label: "View Ghost Tabs", href: "#", todo: true },
+        ],
+      },
+      {
+        name: "Mysl",
+        tag: "Startup",
+        blurb: "My startup: an AI productivity companion. I built and launched the waitlist landing page, with a WebGL brain animation and Supabase behind the sign-ups.",
+        stack: ["React", "FastAPI", "Supabase", "Claude API"],
+        links: [
+          // TODO: add the live Mysl URL, then delete `todo: true`.
+          { label: "Visit Mysl", href: "#", todo: true },
+        ],
+      },
+      {
+        name: "Dockway",
+        tag: "Product",
+        blurb: "Peer-to-peer guidance for international students moving to Ireland, born from my own move here.",
+        stack: ["React", "Supabase"],
+        status: "TODO: status",
+        links: [
+          // TODO: add the Dockway link, then delete `todo: true`.
+          { label: "View Dockway", href: "#", todo: true },
+        ],
+      },
+      {
+        name: "SentinelAI",
+        tag: "Hackathon",
+        blurb: "A hackathon build: a team of AI agents that monitor brand and data exposure.",
+        stack: ["Python", "FastAPI", "Google ADK", "Gemini API"],
+        links: [
+          // TODO: add the SentinelAI repo link, then delete `todo: true`.
+          { label: "View repo", href: "#", todo: true },
+        ],
+      },
+      {
+        name: "PersonaSim",
+        tag: "AI safety",
+        blurb: "A Flask tool that simulates vulnerable personas talking to an LLM, then classifies the harmful responses.",
+        stack: ["Python", "Flask"],
+        links: [{ label: "See it on GitHub", href: "https://github.com/4riiiii" }],
+      },
+      {
+        name: "Go North",
+        tag: "Game",
+        blurb: "The winning game at the PITCH makerthon: a mystery space game where you keep heading north while slaying monsters that show up as small blips.",
+        stack: ["TODO: stack"],
+        links: [
+          // TODO: add the play link, then delete `todo: true`.
+          { label: "Play Go North", href: "#", todo: true },
+        ],
+      },
     ],
   },
   {

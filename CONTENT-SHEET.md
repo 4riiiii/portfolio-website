@@ -28,7 +28,7 @@ How to use: for each section, tell me **KEEP / CHANGE / REMOVE** and send the ne
 |---|---|---|
 | Giant title | ARIKA (scrambles on load + hover) | |
 | Description line | Software engineer, builder and community leader from Delhi, now in Dublin — collecting chapters, one project at a time. | |
-| Carousel | 16 slides, looping forever, in the order of section D below | |
+| Carousel | 12 slides, looping forever, in the order of section D below | |
 | Under each slide | Small title + category tag | |
 
 ---
@@ -151,85 +151,29 @@ Each chapter page has: hero image → tag + big title → **In a line** → **Th
 - **Gallery photos needed (1):** `1.jpg`
 - **Your call:** KEEP / CHANGE / REMOVE → ______
 
-### 07. Mysl  ·  *Startup*
+### 07. Projects  ·  *Builds*
 
-- **Slug / URL:** `mysl` → /chapters/mysl
-- **Hero photo needed:** `public/chapters/mysl/hero.jpg`  (currently a demo image)
-- **In a line:** My startup: an AI productivity companion.
+- **Slug / URL:** `projects` → /chapters/projects
+- **Hero photo needed:** `public/chapters/projects/hero.jpg`  (currently a demo image)
+- **In a line:** Everything I've built, newest first.
 - **Story:**
-  - Mysl is the thing I'm building on the side of everything else: an AI productivity companion. It's built on React, FastAPI, Supabase and the Claude API.
-  - So far I've built and launched the waitlist landing page, complete with a WebGL brain animation. The product itself is still very much a work in progress, and I'm enjoying every messy step of it.
+  - These are the things I've built, newest first. Some are startups, some won hackathons, and some live in my GitHub forever. That's the deal.
 - **Facts shown:**
-  - Type: Startup
-  - Stack: React, FastAPI, Supabase, Claude API
-  - Shipped: Waitlist landing page with WebGL brain animation
-- **Gallery photos needed (3):** `1.jpg`, `2.jpg`, `3.jpg`
-- **Buttons:** "Visit Mysl" → **⚠ TODO link**
+  - Latest: Ghost Tabs, a Chrome extension
+  - Projects: 6
+  - Won: PITCH Makerthon (Go North)
+  - Built with: React · Python · FastAPI · Flask · Supabase
+- **Gallery photos needed (0):** 
+- **Projects listed on the page (newest first):**
+  - **Ghost Tabs** (Chrome extension, latest): A Chrome extension that fades the tabs that haven't been running for a long time. Stack: **⚠ TODO: stack**. Buttons: "View Ghost Tabs" → **⚠ TODO link**
+  - **Mysl** (Startup): My startup: an AI productivity companion. I built and launched the waitlist landing page, with a WebGL brain animation and Supabase behind the sign-ups. Stack: React, FastAPI, Supabase, Claude API. Buttons: "Visit Mysl" → **⚠ TODO link**
+  - **Dockway** (Product): Peer-to-peer guidance for international students moving to Ireland, born from my own move here. Stack: React, Supabase. Status: **⚠ TODO: status**. Buttons: "View Dockway" → **⚠ TODO link**
+  - **SentinelAI** (Hackathon): A hackathon build: a team of AI agents that monitor brand and data exposure. Stack: Python, FastAPI, Google ADK, Gemini API. Buttons: "View repo" → **⚠ TODO link**
+  - **PersonaSim** (AI safety): A Flask tool that simulates vulnerable personas talking to an LLM, then classifies the harmful responses. Stack: Python, Flask. Buttons: "See it on GitHub" → https://github.com/4riiiii
+  - **Go North** (Game): The winning game at the PITCH makerthon: a mystery space game where you keep heading north while slaying monsters that show up as small blips. Stack: **⚠ TODO: stack**. Buttons: "Play Go North" → **⚠ TODO link**
 - **Your call:** KEEP / CHANGE / REMOVE → ______
 
-### 08. Dockway  ·  *Product*
-
-- **Slug / URL:** `dockway` → /chapters/dockway
-- **Hero photo needed:** `public/chapters/dockway/hero.jpg`  (currently a demo image)
-- **In a line:** Peer-to-peer guidance for international students moving to Ireland.
-- **Story:**
-  - Dockway was born from my own experience moving to Ireland. There are a hundred small questions when you arrive and no single place that answers them well.
-  - So it's a peer-to-peer guidance platform: international students helping the next wave of international students. Built with React and Supabase.
-- **Facts shown:**
-  - Type: Peer-to-peer guidance platform
-  - Stack: React, Supabase
-  - Status: **⚠ TODO: status**
-- **Gallery photos needed (3):** `1.jpg`, `2.jpg`, `3.jpg`
-- **Buttons:** "View Dockway" → **⚠ TODO link**
-- **Your call:** KEEP / CHANGE / REMOVE → ______
-
-### 09. SentinelAI  ·  *Hackathon*
-
-- **Slug / URL:** `sentinelai` → /chapters/sentinelai
-- **Hero photo needed:** `public/chapters/sentinelai/hero.jpg`  (currently a demo image)
-- **In a line:** A multi-agent tool for monitoring brand and data exposure.
-- **Story:**
-  - SentinelAI was a hackathon build: a team of cooperating AI agents that keep watch for brand and data exposure, so nobody has to find out the hard way.
-  - It runs on Python and FastAPI, with Google ADK coordinating the agents and the Gemini API doing the thinking.
-- **Facts shown:**
-  - Type: Hackathon build
-  - Stack: Python, FastAPI, Google ADK, Gemini API
-- **Gallery photos needed (3):** `1.jpg`, `2.jpg`, `3.jpg`
-- **Buttons:** "View repo" → **⚠ TODO link**
-- **Your call:** KEEP / CHANGE / REMOVE → ______
-
-### 10. PersonaSim  ·  *AI Safety*
-
-- **Slug / URL:** `personasim` → /chapters/personasim
-- **Hero photo needed:** `public/chapters/personasim/hero.jpg`  (currently a demo image)
-- **In a line:** Simulating vulnerable personas to catch harmful AI responses.
-- **Story:**
-  - A chatbot doesn't land the same way with everyone. PersonaSim is a Flask tool that simulates vulnerable personas talking to an LLM, then classifies the responses that turn out to be harmful.
-  - It's a small project with a question I care about: who gets hurt when an AI gets it wrong, and can we find out before they do?
-- **Facts shown:**
-  - Type: AI safety experiment
-  - Stack: Python, Flask
-- **Gallery photos needed (3):** `1.jpg`, `2.jpg`, `3.jpg`
-- **Buttons:** "See it on GitHub" → https://github.com/4riiiii
-- **Your call:** KEEP / CHANGE / REMOVE → ______
-
-### 11. Go North  ·  *Game*
-
-- **Slug / URL:** `go-north` → /chapters/go-north
-- **Hero photo needed:** `public/chapters/go-north/hero.jpg`  (currently a demo image)
-- **In a line:** The winning game at the PITCH makerthon.
-- **Story:**
-  - Go North is a mystery space game where there's only one rule: keep heading north. Along the way you slay monsters, which show up as small blips.
-  - It won the PITCH makerthon, which I'm still a little giddy about.
-- **Facts shown:**
-  - Event: PITCH makerthon
-  - Result: Winner
-  - Stack: **⚠ TODO: stack**
-- **Gallery photos needed (3):** `1.jpg`, `2.jpg`, `3.jpg`
-- **Buttons:** "Play Go North" → **⚠ TODO link**
-- **Your call:** KEEP / CHANGE / REMOVE → ______
-
-### 12. Deoghar  ·  *Impact*
+### 08. Deoghar  ·  *Impact*
 
 - **Slug / URL:** `deoghar` → /chapters/deoghar
 - **Hero photo needed:** `public/chapters/deoghar/hero.jpg`  (currently a demo image)
@@ -246,7 +190,7 @@ Each chapter page has: hero image → tag + big title → **In a line** → **Th
 - **Gallery photos needed (4):** `1.jpg` (caption: **⚠ TODO: caption**), `2.jpg` (caption: **⚠ TODO: caption**), `3.jpg` (caption: **⚠ TODO: caption**), `4.jpg` (caption: **⚠ TODO: caption**)
 - **Your call:** KEEP / CHANGE / REMOVE → ______
 
-### 13. DNA Data Storage  ·  *Research*
+### 09. DNA Data Storage  ·  *Research*
 
 - **Slug / URL:** `dna-data-storage` → /chapters/dna-data-storage
 - **Hero photo needed:** `public/chapters/dna-data-storage/hero.jpg`  (currently a demo image)
@@ -260,7 +204,7 @@ Each chapter page has: hero image → tag + big title → **In a line** → **Th
 - **Gallery photos needed (3):** `1.jpg`, `2.jpg`, `3.jpg`
 - **Your call:** KEEP / CHANGE / REMOVE → ______
 
-### 14. Songs & Poems  ·  *Creative*
+### 10. Songs & Poems  ·  *Creative*
 
 - **Slug / URL:** `songs-and-poems` → /chapters/songs-and-poems
 - **Hero photo needed:** `public/chapters/songs-and-poems/hero.jpg`  (currently a demo image)
@@ -278,7 +222,7 @@ Each chapter page has: hero image → tag + big title → **In a line** → **Th
   - Voice memo: **⚠ TODO: link or note about a song in progress**
 - **Your call:** KEEP / CHANGE / REMOVE → ______
 
-### 15. Kitchen  ·  *Personal*
+### 11. Kitchen  ·  *Personal*
 
 - **Slug / URL:** `kitchen` → /chapters/kitchen
 - **Hero photo needed:** `public/chapters/kitchen/hero.jpg`  (currently a demo image)
@@ -291,7 +235,7 @@ Each chapter page has: hero image → tag + big title → **In a line** → **Th
 - **Gallery photos needed (3):** `1.jpg` (caption: **⚠ TODO: caption**), `2.jpg` (caption: **⚠ TODO: caption**), `3.jpg` (caption: **⚠ TODO: caption**)
 - **Your call:** KEEP / CHANGE / REMOVE → ______
 
-### 16. Mountains  ·  *Travel*
+### 12. Mountains  ·  *Travel*
 
 - **Slug / URL:** `mountains` → /chapters/mountains
 - **Hero photo needed:** `public/chapters/mountains/hero.jpg`  (currently a demo image)

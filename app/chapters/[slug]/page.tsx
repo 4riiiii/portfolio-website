@@ -68,6 +68,57 @@ export default function ChapterPage({ params }: { params: Params }) {
         </dl>
       </section>
 
+      {c.projects && (
+        <section aria-label="Projects" className="px-[var(--pad)] pb-20 md:pb-32">
+          <ol className="border-t border-paper/15">
+            {c.projects.map((pr, k) => (
+              <li key={pr.name} className="border-b border-paper/15">
+                <FadeIn>
+                  <div className="grid gap-4 py-8 md:grid-cols-[4rem_minmax(0,1.1fr)_minmax(0,2fr)] md:gap-10 md:py-12">
+                    <span className="label tabular-nums text-paper/50">{String(k + 1).padStart(2, "0")}</span>
+                    <div>
+                      <h3 className="font-display text-[clamp(2rem,3.6vw,3.4rem)] font-medium leading-none tracking-[-0.03em]">{pr.name}</h3>
+                      <p className="label mt-3 flex items-center gap-3 text-paper/55">
+                        {pr.tag}
+                        {pr.latest && <span className="rounded-full bg-accent px-2.5 py-1 text-ink">Latest</span>}
+                      </p>
+                    </div>
+                    <div>
+                      <p className="max-w-xl text-[17px] leading-relaxed text-paper/85">{pr.blurb}</p>
+                      {pr.status && <p className="mt-3 text-small text-paper/60">Status: <Txt>{pr.status}</Txt></p>}
+                      {pr.stack && (
+                        <ul className="mt-4 flex flex-wrap gap-2">
+                          {pr.stack.map((t) => (
+                            <li key={t} className={isTodo(t) ? "todo" : "pill"}>{t}</li>
+                          ))}
+                        </ul>
+                      )}
+                      {pr.links && pr.links.length > 0 && (
+                        <ul className="mt-5 flex flex-wrap gap-3">
+                          {pr.links.map((l) => (
+                            <li key={l.label}>
+                              {/* TODO links point at "#" until you add the real URL in content/chapters.ts */}
+                              <a
+                                href={l.href}
+                                {...(l.href.startsWith("http") ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                                className="label inline-flex items-center gap-3 rounded-full border border-paper/30 px-5 py-3 transition-colors duration-300 hover:border-accent hover:bg-accent hover:text-ink"
+                              >
+                                {l.label}
+                                {l.todo && <span className="todo !border-current !text-inherit">TODO</span>}
+                              </a>
+                            </li>
+                          ))}
+                        </ul>
+                      )}
+                    </div>
+                  </div>
+                </FadeIn>
+              </li>
+            ))}
+          </ol>
+        </section>
+      )}
+
       {c.notebook && (
         <section aria-label="Notebook" className="px-[var(--pad)] pb-20 md:pb-32">
           <div className="label mb-6 text-paper/50">From the notebook</div>
