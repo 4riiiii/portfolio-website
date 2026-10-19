@@ -28,7 +28,7 @@ How to use: for each section, tell me **KEEP / CHANGE / REMOVE** and send the ne
 |---|---|---|
 | Giant title | ARIKA (scrambles on load + hover) | |
 | Description line | Software engineer, builder and community leader from Delhi, now in Dublin — collecting chapters, one project at a time. | |
-| Carousel | 12 slides, looping forever, in the order of section D below | |
+| Carousel | 6 slides, looping forever, in the order of section D below | |
 | Under each slide | Small title + category tag | |
 
 ---
@@ -119,22 +119,7 @@ Each chapter page has: hero image → tag + big title → **In a line** → **Th
 - **Gallery photos needed (3):** `1.jpg`, `2.jpg`, `3.jpg`
 - **Your call:** KEEP / CHANGE / REMOVE → ______
 
-### 05. Oktoberfest Carnival  ·  *Event*
-
-- **Slug / URL:** `oktoberfest-carnival` → /chapters/oktoberfest-carnival
-- **Hero photo needed:** `public/chapters/oktoberfest-carnival/hero.jpg`  (currently a demo image)
-- **In a line:** The big one I ran as Auditor: artists booked, 600+ attendees.
-- **Story:**
-  - The Oktoberfest Carnival was the biggest event I've run. We booked the artists and had 600+ people come through.
-  - My biggest lesson wasn't logistics. It was delegation. I started out trying to do everything myself, and learning to hand pieces of it to other people made everything better.
-- **Facts shown:**
-  - Role: Auditor, event lead
-  - Attendees: 600+
-  - Lesson: Learn to delegate
-- **Gallery photos needed (4):** `1.jpg`, `2.jpg`, `3.jpg`, `4.jpg`
-- **Your call:** KEEP / CHANGE / REMOVE → ______
-
-### 06. Part Time  ·  *Work*
+### 05. Part Time  ·  *Work*
 
 - **Slug / URL:** `part-time` → /chapters/part-time
 - **Hero photo needed:** `public/chapters/part-time/hero.jpg`  (currently a demo image)
@@ -151,7 +136,7 @@ Each chapter page has: hero image → tag + big title → **In a line** → **Th
 - **Gallery photos needed (1):** `1.jpg`
 - **Your call:** KEEP / CHANGE / REMOVE → ______
 
-### 07. Projects  ·  *Builds*
+### 06. Projects  ·  *Builds*
 
 - **Slug / URL:** `projects` → /chapters/projects
 - **Hero photo needed:** `public/chapters/projects/hero.jpg`  (currently a demo image)
@@ -171,81 +156,6 @@ Each chapter page has: hero image → tag + big title → **In a line** → **Th
   - **SentinelAI** (Hackathon): A hackathon build: a team of AI agents that monitor brand and data exposure. Stack: Python, FastAPI, Google ADK, Gemini API. Buttons: "View repo" → **⚠ TODO link**
   - **PersonaSim** (AI safety): A Flask tool that simulates vulnerable personas talking to an LLM, then classifies the harmful responses. Stack: Python, Flask. Buttons: "See it on GitHub" → https://github.com/4riiiii
   - **Go North** (Game): The winning game at the PITCH makerthon: a mystery space game where you keep heading north while slaying monsters that show up as small blips. Stack: **⚠ TODO: stack**. Buttons: "Play Go North" → **⚠ TODO link**
-- **Your call:** KEEP / CHANGE / REMOVE → ______
-
-### 08. Deoghar  ·  *Impact*
-
-- **Slug / URL:** `deoghar` → /chapters/deoghar
-- **Hero photo needed:** `public/chapters/deoghar/hero.jpg`  (currently a demo image)
-- **In a line:** 196 devices, a village classroom and the work I'm proudest of.
-- **Story:**
-  - Before any of the software, there was a device drive in India. We collected 196 devices from people who no longer needed them and gave them to people who did, and raised around €5,000 for internet and power, because a laptop with no connection is just a very flat paperweight.
-  - Then I went to Deoghar, a village, and stayed for more than three months to teach computer basics. Over 500 people came through, kids and older people alike. Some had never touched a computer. We started from 'this is how you turn it on'.
-  - I think about those months constantly. They're the reason I care so much about the person on the other side of the screen, and why I want the things I build to help someone land on their feet.
-- **Facts shown:**
-  - Devices: 196 collected and given on
-  - Raised: ~€5,000 for internet and power
-  - Time in Deoghar: 3+ months
-  - Taught: 500+ kids and older people
-- **Gallery photos needed (4):** `1.jpg` (caption: **⚠ TODO: caption**), `2.jpg` (caption: **⚠ TODO: caption**), `3.jpg` (caption: **⚠ TODO: caption**), `4.jpg` (caption: **⚠ TODO: caption**)
-- **Your call:** KEEP / CHANGE / REMOVE → ______
-
-### 09. DNA Data Storage  ·  *Research*
-
-- **Slug / URL:** `dna-data-storage` → /chapters/dna-data-storage
-- **Hero photo needed:** `public/chapters/dna-data-storage/hero.jpg`  (currently a demo image)
-- **In a line:** A research rabbit hole I'm exploring outside coursework.
-- **Story:**
-  - Outside lectures I've fallen down a research rabbit hole: DNA data storage, the idea of keeping information in molecules instead of drives.
-  - I'm still early and still curious. This one's for the love of learning, not for a grade.
-- **Facts shown:**
-  - Type: Research interest
-  - Where: Outside coursework
-- **Gallery photos needed (3):** `1.jpg`, `2.jpg`, `3.jpg`
-- **Your call:** KEEP / CHANGE / REMOVE → ______
-
-### 10. Songs & Poems  ·  *Creative*
-
-- **Slug / URL:** `songs-and-poems` → /chapters/songs-and-poems
-- **Hero photo needed:** `public/chapters/songs-and-poems/hero.jpg`  (currently a demo image)
-- **In a line:** Confessional, folk-style songs and poetry.
-- **Story:**
-  - I write songs and poetry, mostly confessional and folk-flavoured. It's where the feelings that don't fit in a commit message go.
-  - My influences are Elliott Smith and Phoebe Bridgers: quiet voices, honest lines, the kind of songs that sound like a secret.
-- **Facts shown:**
-  - Style: Confessional, folk
-  - Influences: Elliott Smith, Phoebe Bridgers
-- **Gallery photos needed (3):** `1.jpg`, `2.jpg`, `3.jpg`
-- **Notebook cards (placeholders for your writing):**
-  - Lyric: **⚠ TODO: paste a favourite lyric here**
-  - Poem: **⚠ TODO: paste a few lines of a poem here**
-  - Voice memo: **⚠ TODO: link or note about a song in progress**
-- **Your call:** KEEP / CHANGE / REMOVE → ______
-
-### 11. Kitchen  ·  *Personal*
-
-- **Slug / URL:** `kitchen` → /chapters/kitchen
-- **Hero photo needed:** `public/chapters/kitchen/hero.jpg`  (currently a demo image)
-- **In a line:** I cook more than I probably should.
-- **Story:**
-  - I love cooking. It's the one place where I can make something, taste the result immediately and not need a code review.
-  - It's also a very good excuse to feed people.
-- **Facts shown:**
-  - Favourite dish: **⚠ TODO: add a favourite dish**
-- **Gallery photos needed (3):** `1.jpg` (caption: **⚠ TODO: caption**), `2.jpg` (caption: **⚠ TODO: caption**), `3.jpg` (caption: **⚠ TODO: caption**)
-- **Your call:** KEEP / CHANGE / REMOVE → ______
-
-### 12. Mountains  ·  *Travel*
-
-- **Slug / URL:** `mountains` → /chapters/mountains
-- **Hero photo needed:** `public/chapters/mountains/hero.jpg`  (currently a demo image)
-- **In a line:** Trips through the Uttarakhand and Himachal mountains.
-- **Story:**
-  - I love a good mountain trip. I've travelled through the Uttarakhand and Himachal mountains, and I'm always happy to be back up there.
-  - Captions and favourite memories to come.
-- **Facts shown:**
-  - Places: Uttarakhand, Himachal
-- **Gallery photos needed (4):** `1.jpg` (caption: **⚠ TODO: caption**), `2.jpg` (caption: **⚠ TODO: caption**), `3.jpg` (caption: **⚠ TODO: caption**), `4.jpg` (caption: **⚠ TODO: caption**)
 - **Your call:** KEEP / CHANGE / REMOVE → ______
 
 ---

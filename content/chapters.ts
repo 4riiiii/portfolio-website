@@ -43,6 +43,8 @@ export type ProjectEntry = {
 
 export type Chapter = {
   slug: string;
+  /** Hidden chapters are kept here but left off the carousel and their pages. Delete this line (or set false) to bring one back. */
+  hidden?: boolean;
   title: string;
   tag: string;
   /** Hero image: used on the carousel slide and the detail page. */
@@ -96,7 +98,7 @@ export const nav = [
 ];
 
 // ── Chapters (carousel order) ────────────────────────────────────────────────
-export const chapters: Chapter[] = [
+const allChapters: Chapter[] = [
   {
     slug: "delhi",
     title: "Delhi",
@@ -187,6 +189,7 @@ export const chapters: Chapter[] = [
   },
   {
     slug: "oktoberfest-carnival",
+    hidden: true, // TODO: add content, then remove this line
     title: "Oktoberfest Carnival",
     tag: "Event",
     image: demo("oktoberfest-carnival"),
@@ -306,6 +309,7 @@ export const chapters: Chapter[] = [
   },
   {
     slug: "deoghar",
+    hidden: true, // TODO: add content, then remove this line
     title: "Deoghar",
     tag: "Impact",
     image: demo("deoghar"),
@@ -325,6 +329,7 @@ export const chapters: Chapter[] = [
   },
   {
     slug: "dna-data-storage",
+    hidden: true, // TODO: add content, then remove this line
     title: "DNA Data Storage",
     tag: "Research",
     image: demo("dna-data-storage"),
@@ -341,6 +346,7 @@ export const chapters: Chapter[] = [
   },
   {
     slug: "songs-and-poems",
+    hidden: true, // TODO: add content, then remove this line
     title: "Songs & Poems",
     tag: "Creative",
     image: demo("songs-and-poems"),
@@ -362,6 +368,7 @@ export const chapters: Chapter[] = [
   },
   {
     slug: "kitchen",
+    hidden: true, // TODO: add content, then remove this line
     title: "Kitchen",
     tag: "Personal",
     image: demo("kitchen"),
@@ -375,6 +382,7 @@ export const chapters: Chapter[] = [
   },
   {
     slug: "mountains",
+    hidden: true, // TODO: add content, then remove this line
     title: "Mountains",
     tag: "Travel",
     image: demo("mountains"),
@@ -387,6 +395,9 @@ export const chapters: Chapter[] = [
     gallery: galleryOf("mountains", 4, ["TODO: caption", "TODO: caption", "TODO: caption", "TODO: caption"]),
   },
 ];
+
+/** Chapters shown on the site (the carousel, their pages, the sitemap). */
+export const chapters: Chapter[] = allChapters.filter((c) => !c.hidden);
 
 // ── About ────────────────────────────────────────────────────────────────────
 export const about = {
