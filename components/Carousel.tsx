@@ -5,18 +5,8 @@ import type { Chapter } from "@/content/chapters";
 import * as sound from "@/lib/sound";
 import SmartImage from "./SmartImage";
 import { INTRO_MS, shouldIntro } from "@/lib/intro";
+import { computeLayout, type Layout } from "@/lib/carouselLayout";
 import { useChapterTransition } from "./TransitionLayer";
-
-type Layout = { vw: number; vh: number; sw: number; sh: number; step: number; total: number; top: number };
-
-function computeLayout(vw: number, vh: number, n: number): Layout {
-  const mobile = vw < 768;
-  const sh = mobile ? Math.min(vh * 0.46, vw * 0.7 * 1.3) : vh * 0.56;
-  const sw = mobile ? vw * 0.7 : sh * 0.78;
-  const gap = mobile ? 14 : Math.max(28, vw * 0.03);
-  const step = sw + gap;
-  return { vw, vh, sw, sh, step, total: step * n, top: (vh - sh) / 2 - (mobile ? 6 : 22) };
-}
 
 /** Distance of slide `i` from the screen centre, wrapped so slides loop forever in both directions. */
 const wrapDist = (i: number, cur: number, L: Layout) => {
@@ -66,7 +56,7 @@ export default function Carousel({ chapters }: { chapters: Chapter[] }) {
     cur = reduce ? tgt : tgt - L.step * 4; // intro: slides sweep in
     // First visit: slides stay hidden until ARIKA has settled, then sweep in as she drops to the bottom.
     const intro = shouldIntro();
-    const startAt = performance.now() + (intro ? INTRO_MS - 150 : 0);
+    const startAt = performance.now() + (intro ? INTRO_MS + 750 : 0);
     let revealed = false;
     el.style.opacity = intro ? "0" : "1";
     lastIdx = Math.round(cur / L.step);
