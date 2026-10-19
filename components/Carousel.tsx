@@ -2,6 +2,9 @@
 
 import { useEffect, useRef } from "react";
 import type { Chapter } from "@/content/chapters";
+
+/** Only what a slide needs: keeps the rest of each chapter out of the page payload. */
+export type Slide = Pick<Chapter, "slug" | "title" | "tag" | "image" | "position" | "fit" | "bg">;
 import * as sound from "@/lib/sound";
 import SmartImage from "./SmartImage";
 import { INTRO_MS, shouldIntro } from "@/lib/intro";
@@ -23,7 +26,7 @@ const SSR_LAYOUT = computeLayout(1440, 900, 16);
  * positioned modulo the total strip width, so the set effectively repeats forever.
  * Input: wheel / trackpad, mouse drag, touch swipe and arrow keys, with eased inertia.
  */
-export default function Carousel({ chapters }: { chapters: Chapter[] }) {
+export default function Carousel({ chapters }: { chapters: Slide[] }) {
   const root = useRef<HTMLElement>(null);
   const items = useRef<(HTMLLIElement | null)[]>([]);
   const frames = useRef<(HTMLDivElement | null)[]>([]);

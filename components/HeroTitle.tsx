@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useLayoutEffect, useRef } from "react";
-import { chapters, site } from "@/content/chapters";
+import { site } from "@/content/chapters";
 import { INTRO_MS, markIntroSeen, shouldIntro } from "@/lib/intro";
 import { computeLayout, titleMetrics } from "@/lib/carouselLayout";
 import Scramble from "./Scramble";
@@ -13,7 +13,7 @@ const useIso = typeof window !== "undefined" ? useLayoutEffect : useEffect;
  * the footer, so nothing overlaps. On the first visit it starts alone, huge, in the middle of
  * a black screen, scrambles into place, then shrinks and glides down as the slides sweep in.
  */
-export default function HeroTitle() {
+export default function HeroTitle({ count }: { count: number }) {
   const box = useRef<HTMLDivElement>(null);
   const desc = useRef<HTMLParagraphElement>(null);
 
@@ -24,7 +24,7 @@ export default function HeroTitle() {
 
     const size = () => {
       const footer = document.querySelector("footer");
-      const m = titleMetrics(computeLayout(window.innerWidth, window.innerHeight, chapters.length), footer?.getBoundingClientRect().height ?? 64);
+      const m = titleMetrics(computeLayout(window.innerWidth, window.innerHeight, count), footer?.getBoundingClientRect().height ?? 64);
       el.style.fontSize = `${m.fs}px`;
       el.style.bottom = `${m.bottom}px`;
       return m.fs;

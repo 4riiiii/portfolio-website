@@ -3,6 +3,8 @@
 import { useEffect } from "react";
 import { motion } from "framer-motion";
 import type { Chapter } from "@/content/chapters";
+
+type HeroData = Pick<Chapter, "slug" | "title" | "image" | "position" | "fit" | "bg">;
 import { transitionState } from "@/lib/transitionState";
 import SmartImage from "./SmartImage";
 
@@ -11,7 +13,7 @@ import SmartImage from "./SmartImage";
  * the shared-element transition, so the hand-off is seamless. Also remembers which chapter
  * you were on so "Back" returns to the same slide.
  */
-export default function ChapterHero({ chapter }: { chapter: Chapter }) {
+export default function ChapterHero({ chapter }: { chapter: HeroData }) {
   useEffect(() => {
     try { sessionStorage.setItem("lastChapter", chapter.slug); } catch {}
   }, [chapter.slug]);

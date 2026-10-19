@@ -254,7 +254,7 @@ const allChapters: Chapter[] = [
         tag: "Chrome extension",
         latest: true,
         blurb: "A Chrome extension that fades the tabs that haven't been running for a long time.",
-        stack: ["TODO: stack"],
+        // Stack not shown yet. Add e.g. stack: ["JavaScript"] once confirmed.
         links: [
           // TODO: add the Ghost Tabs link (Chrome Web Store or repo), then delete `todo: true`.
           { label: "View Ghost Tabs", href: "#", todo: true },
@@ -275,7 +275,7 @@ const allChapters: Chapter[] = [
         tag: "Product",
         blurb: "Peer-to-peer guidance for international students moving to Ireland, born from my own move here.",
         stack: ["React", "Supabase"],
-        status: "TODO: status",
+        // status: "...",  (optional, shown as "Status: ..." under the description)
         links: [
           // TODO: add the Dockway link, then delete `todo: true`.
           { label: "View Dockway", href: "#", todo: true },
@@ -302,7 +302,7 @@ const allChapters: Chapter[] = [
         name: "Go North",
         tag: "Game",
         blurb: "The winning game at the PITCH makerthon: a mystery space game where you keep heading north while slaying monsters that show up as small blips.",
-        stack: ["TODO: stack"],
+        // Stack not shown yet.
         links: [
           // TODO: add the play link, then delete `todo: true`.
           { label: "Play Go North", href: "#", todo: true },

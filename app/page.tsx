@@ -5,8 +5,8 @@ import HeroTitle from "@/components/HeroTitle";
 export default function Home() {
   return (
     <>
-      <Carousel chapters={chapters} />
-      <HeroTitle />
+      <Carousel chapters={chapters.map(({ slug, title, tag, image, position, fit, bg }) => ({ slug, title, tag, image, position, fit, bg }))} />
+      <HeroTitle count={chapters.length} />
     </>
   );
 }

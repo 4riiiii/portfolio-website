@@ -29,7 +29,7 @@ export default function ChapterPage({ params }: { params: Params }) {
 
   return (
     <article>
-      <ChapterHero chapter={c} />
+      <ChapterHero chapter={{ slug: c.slug, title: c.title, image: c.image, position: c.position, fit: c.fit, bg: c.bg }} />
 
       <header className="px-[var(--pad)] pb-16 pt-10 md:pb-24 md:pt-14">
         <div className="flex items-baseline justify-between">
