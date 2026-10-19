@@ -66,7 +66,7 @@ export default function HeroTitle() {
         style={{ opacity: 0 }}
         className="intro-hidden pointer-events-none fixed inset-x-0 top-[68px] z-[5] mx-auto max-w-[24rem] px-[var(--pad)] text-center text-[13px] leading-snug text-paper/80 md:top-[72px] md:max-w-[36rem] md:text-[15px]"
       >
-        {site.description}
+        {site.tagline}
       </p>
       <div
         ref={box}

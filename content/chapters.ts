@@ -81,6 +81,9 @@ export const theme = {
 export const site = {
   name: "Arika Kashyap",
   display: "ARIKA",
+  /** The line under the nav on the homepage. */
+  tagline: "I'm a computer science student. Welcome to my life, one chapter at a time.",
+  /** Used for search results and link previews. */
   description:
     "Software engineer, builder and community leader from Delhi, now in Dublin — collecting chapters, one project at a time.",
   email: "arikakashyap911@gmail.com",

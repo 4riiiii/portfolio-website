@@ -27,7 +27,7 @@ How to use: for each section, tell me **KEEP / CHANGE / REMOVE** and send the ne
 | Item | Currently says | Your call |
 |---|---|---|
 | Giant title | ARIKA (scrambles on load + hover) | |
-| Description line | Software engineer, builder and community leader from Delhi, now in Dublin — collecting chapters, one project at a time. | |
+| Line under the nav | I'm a computer science student. Welcome to my life, one chapter at a time. | |
 | Carousel | 6 slides, looping forever, in the order of section D below | |
 | Under each slide | Small title + category tag | |
 
