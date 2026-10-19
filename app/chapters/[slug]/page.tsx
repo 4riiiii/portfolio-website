@@ -82,6 +82,7 @@ export default function ChapterPage({ params }: { params: Params }) {
         </section>
       )}
 
+      {c.gallery.length > 0 && (
       <section aria-label="Gallery" className="px-[var(--pad)] pb-20 md:pb-32">
         {(() => {
           const tall = c.galleryLayout === "portrait";
@@ -112,6 +113,7 @@ export default function ChapterPage({ params }: { params: Params }) {
           );
         })()}
       </section>
+      )}
 
       {c.links && c.links.length > 0 && (
         <section aria-label="Links" className="px-[var(--pad)] pb-20 md:pb-32">

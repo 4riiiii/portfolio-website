@@ -36,6 +36,10 @@ export type Chapter = {
   image: string;
   /** Optional CSS object-position for the hero crop, e.g. "50% 65%". */
   position?: string;
+  /** How the hero image fills its frame. "contain" shows the whole image (for stickers / illustrations). Default "cover". */
+  fit?: "cover" | "contain";
+  /** Background colour behind a "contain" image. */
+  bg?: string;
   /** "portrait" lays the gallery out as tall tiles (use for phone photos). Default: landscape. */
   galleryLayout?: "portrait" | "landscape";
   /** "In a line" summary. */
@@ -130,14 +134,16 @@ export const chapters: Chapter[] = [
     slug: "aryabhatta-scholar",
     title: "Aryabhatta Scholar",
     tag: "Milestone",
-    image: demo("aryabhatta-scholar"),
+    image: "/chapters/aryabhatta-scholar/hero.png",
+    fit: "contain",
+    bg: "#ffffff",
     line: "A merit-based scholarship I'm proud to carry.",
     paragraphs: [
       "I'm a recipient of the Aryabhatta merit scholarship. It's one of those things that quietly changes what feels possible, and a reminder that someone believed in the work before it was finished.",
       "I try to pay it forward by building things and running things that help other people get started too.",
     ],
     facts: [{ label: "Type", value: "Merit-based scholarship" }],
-    gallery: galleryOf("aryabhatta-scholar", 3),
+    gallery: [],
   },
   {
     slug: "iss-auditor",

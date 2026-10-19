@@ -12,10 +12,11 @@ type Props = {
   priority?: boolean;
   className?: string;
   style?: React.CSSProperties;
+  fit?: "cover" | "contain";
 };
 
 /** next/image (fill) that swaps to a generated gradient if the source fails to load. */
-export default function SmartImage({ src, alt, seed, sizes = "100vw", priority, className = "", style }: Props) {
+export default function SmartImage({ src, alt, seed, sizes = "100vw", priority, className = "", style, fit = "cover" }: Props) {
   const [failed, setFailed] = useState(false);
   const ref = useRef<HTMLImageElement>(null);
 
@@ -36,7 +37,7 @@ export default function SmartImage({ src, alt, seed, sizes = "100vw", priority, 
       priority={priority}
       draggable={false}
       onError={() => setFailed(true)}
-      className={`object-cover ${className}`}
+      className={`${fit === "contain" ? "object-contain" : "object-cover"} ${className}`}
       style={style}
     />
   );

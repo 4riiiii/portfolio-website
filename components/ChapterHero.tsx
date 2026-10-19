@@ -22,12 +22,13 @@ export default function ChapterHero({ chapter }: { chapter: Chapter }) {
   return (
     <motion.div
       className="relative h-[75vh] w-full overflow-hidden bg-paper/5"
+      style={{ backgroundColor: chapter.bg }}
       initial={{ opacity: instant ? 1 : 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
     >
-      <SmartImage src={chapter.image} alt={`${chapter.title}: hero image`} seed={chapter.slug} priority sizes="100vw" style={{ objectPosition: chapter.position }} />
-      <div aria-hidden className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-ink/70 to-transparent" />
+      <SmartImage src={chapter.image} alt={`${chapter.title}: hero image`} seed={chapter.slug} priority fit={chapter.fit} sizes="100vw" style={{ objectPosition: chapter.position }} />
+      {chapter.fit !== "contain" && <div aria-hidden className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-ink/70 to-transparent" />}
     </motion.div>
   );
 }

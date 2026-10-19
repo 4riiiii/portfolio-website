@@ -229,13 +229,16 @@ export default function Carousel({ chapters }: { chapters: Chapter[] }) {
                   ref={(r) => { frames.current[i] = r; }}
                   className="relative overflow-hidden bg-paper/5"
                   data-pos={c.position}
-                  style={{ height: SSR_LAYOUT.sh }}
+                  data-fit={c.fit}
+                  data-bg={c.bg}
+                  style={{ height: SSR_LAYOUT.sh, background: c.bg }}
                 >
                   <div ref={(r) => { pars.current[i] = r; }} className="absolute inset-0 will-change-transform">
                     <SmartImage
                       src={c.image}
                       alt=""
                       seed={c.slug}
+                      fit={c.fit}
                       sizes="(min-width: 768px) 32vw, 72vw"
                       priority={i < 3}
                       className="carousel-img brightness-[0.82] transition-[filter] duration-500 ease-out group-hover:brightness-100"
