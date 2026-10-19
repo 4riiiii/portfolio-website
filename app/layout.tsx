@@ -28,6 +28,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" className={`${display.variable} ${sans.variable}`}>
       <head>
         <style dangerouslySetInnerHTML={{ __html: `:root{--accent:${hex(theme.accent)}}` }} />
+        <noscript><style>{`.intro-hidden,section[aria-label="Chapters"]{opacity:1!important}`}</style></noscript>
       </head>
       <body>
         <SoundProvider>

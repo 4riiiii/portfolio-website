@@ -4,6 +4,7 @@ import { useEffect, useRef } from "react";
 import type { Chapter } from "@/content/chapters";
 import * as sound from "@/lib/sound";
 import SmartImage from "./SmartImage";
+import { INTRO_MS, shouldIntro } from "@/lib/intro";
 import { useChapterTransition } from "./TransitionLayer";
 
 type Layout = { vw: number; vh: number; sw: number; sh: number; step: number; total: number; top: number };
@@ -63,6 +64,11 @@ export default function Carousel({ chapters }: { chapters: Chapter[] }) {
       if (i >= 0) tgt = i * L.step;
     } catch {}
     cur = reduce ? tgt : tgt - L.step * 4; // intro: slides sweep in
+    // First visit: slides stay hidden until ARIKA has settled, then sweep in as she drops to the bottom.
+    const intro = shouldIntro();
+    const startAt = performance.now() + (intro ? INTRO_MS - 150 : 0);
+    let revealed = false;
+    el.style.opacity = intro ? "0" : "1";
     lastIdx = Math.round(cur / L.step);
 
     const layout = () => {
@@ -171,7 +177,12 @@ export default function Carousel({ chapters }: { chapters: Chapter[] }) {
     let id = requestAnimationFrame(function frame(now) {
       const dt = Math.min(now - prev, 50);
       prev = now;
-      const k = reduce ? 1 : 1 - Math.pow(1 - 0.085, dt / 16.67);
+      if (!revealed && now >= startAt) {
+        revealed = true;
+        el.style.transition = "opacity 0.7s ease";
+        el.style.opacity = "1";
+      }
+      const k = now < startAt ? 0 : reduce ? 1 : 1 - Math.pow(1 - 0.085, dt / 16.67);
       cur += (tgt - cur) * k;
       if (Math.abs(tgt - cur) < 0.05) cur = tgt;
       if (!introDone && Math.abs(tgt - cur) < L.step * 0.3) introDone = true;
@@ -200,7 +211,8 @@ export default function Carousel({ chapters }: { chapters: Chapter[] }) {
   }, [chapters, n]);
 
   return (
-    <section ref={root} aria-label="Chapters" className="fixed inset-0 z-10 touch-none select-none overflow-hidden">
+    <section ref={root} aria-label="Chapters" className="fixed inset-0 z-10 touch-none select-none overflow-hidden"
+      style={{ opacity: 0 }}>
       <ul>
         {chapters.map((c, i) => {
           const d = wrapDist(i, 0, SSR_LAYOUT);
