@@ -86,16 +86,21 @@ export default function ChapterPage({ params }: { params: Params }) {
       <section aria-label="Gallery" className="px-[var(--pad)] pb-20 md:pb-32">
         {(() => {
           const tall = c.galleryLayout === "portrait";
+          const natural = c.galleryLayout === "natural";
           const n = c.gallery.length;
           const grid = tall ? (n >= 3 ? "md:grid-cols-3" : "md:grid-cols-2") : "md:grid-cols-2";
           return (
-            <ul className={`grid gap-4 ${grid}`}>
+            <ul className={`grid items-start gap-4 ${grid}`}>
               {c.gallery.map((g, k) => {
-                const wide = !tall && n % 2 === 1 && k === 0;
+                const [rw, rh] = (g.ratio ?? "4 / 3").split("/").map(Number);
+                const wide = natural ? rw > rh : !tall && n % 2 === 1 && k === 0;
                 return (
                   <li key={k} className={wide ? "md:col-span-2" : ""}>
                     <FadeIn>
-                      <div className={`relative w-full overflow-hidden bg-paper/5 ${tall ? "aspect-[3/4]" : wide ? "aspect-[21/9]" : "aspect-[16/10]"}`}>
+                      <div
+                        className={`relative w-full overflow-hidden bg-paper/5 ${natural ? "" : tall ? "aspect-[3/4]" : wide ? "aspect-[21/9]" : "aspect-[16/10]"}`}
+                        style={natural ? { aspectRatio: g.ratio ?? "4 / 3" } : undefined}
+                      >
                         <SmartImage
                           src={g.src}
                           alt={g.caption && !isTodo(g.caption) ? g.caption : `${c.title}: gallery image ${k + 1}`}

@@ -24,7 +24,7 @@ const galleryOf = (slug: string, n = 3, captions: string[] = []): GalleryImage[]
   }));
 
 // ── Types ────────────────────────────────────────────────────────────────────
-export type GalleryImage = { src: string; caption?: string; /** CSS object-position, e.g. "50% 30%" */ position?: string };
+export type GalleryImage = { src: string; caption?: string; /** Natural aspect ratio, e.g. "4 / 3" (used by the "natural" gallery layout). */ ratio?: string; /** CSS object-position, e.g. "50% 30%" */ position?: string };
 export type LinkItem = { label: string; href: string; todo?: boolean };
 export type Fact = { label: string; value: string };
 
@@ -40,8 +40,8 @@ export type Chapter = {
   fit?: "cover" | "contain";
   /** Background colour behind a "contain" image. */
   bg?: string;
-  /** "portrait" lays the gallery out as tall tiles (use for phone photos). Default: landscape. */
-  galleryLayout?: "portrait" | "landscape";
+  /** "portrait" = tall tiles (phone photos); "natural" = masonry, each photo at its own aspect ratio (set `ratio` per image); default "landscape". */
+  galleryLayout?: "portrait" | "landscape" | "natural";
   /** "In a line" summary. */
   line: string;
   /** Short first-person paragraphs. */
@@ -149,7 +149,9 @@ export const chapters: Chapter[] = [
     slug: "iss-auditor",
     title: "ISS Auditor",
     tag: "Community",
-    image: demo("iss-auditor"),
+    image: "/chapters/iss-auditor/hero.jpg",
+    position: "50% 35%",
+    galleryLayout: "natural",
     line: "Elected Auditor of the UCD International Students Society.",
     paragraphs: [
       "I was elected Auditor of the UCD International Students Society, a community of 6,500+ members. I was previously its PRO, so I came in already knowing how much goes on behind the scenes.",
@@ -160,7 +162,11 @@ export const chapters: Chapter[] = [
       { label: "Members", value: "6,500+" },
       { label: "I handle", value: "Sponsorships, partnerships, events, recruitment, socials" },
     ],
-    gallery: galleryOf("iss-auditor", 3),
+    gallery: [
+      { src: "/chapters/iss-auditor/1.jpg", ratio: "3 / 4" },
+      { src: "/chapters/iss-auditor/2.jpg", ratio: "3 / 4", position: "50% 60%" },
+      { src: "/chapters/iss-auditor/3.jpg", ratio: "16 / 9", position: "50% 85%" },
+    ],
   },
   {
     slug: "oktoberfest-carnival",
