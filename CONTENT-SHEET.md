@@ -15,7 +15,7 @@ How to use: for each section, tell me **KEEP / CHANGE / REMOVE** and send the ne
 | Footer links | GitHub (https://github.com/4riiiii) · LinkedIn (https://www.linkedin.com/in/arika-kashyap/) · Email (arikakashyap911@gmail.com) | |
 | Footer right | Sound On/Off toggle + © 2026 | |
 | Accent colour | #FF7A45 (warm orange; used for cursor, tags, small details) | |
-| Site description (search results / link previews) | Software engineer, builder and community leader from Jamshedpur, now in Dublin — collecting chapters, one project at a time. | |
+| Site description (search results / link previews) | Software engineer, builder and community leader from Delhi, now in Dublin — collecting chapters, one project at a time. | |
 | Fonts | Space Grotesk (titles) + Inter Tight (body) | |
 | Sounds | Tick when a slide passes centre, hover blip, page-change whoosh (synthesised, no files) | |
 | Cursor | Small dot; becomes an orange "View" disc over slides (desktop only) | |
@@ -27,7 +27,7 @@ How to use: for each section, tell me **KEEP / CHANGE / REMOVE** and send the ne
 | Item | Currently says | Your call |
 |---|---|---|
 | Giant title | ARIKA (scrambles on load + hover) | |
-| Description line | Software engineer, builder and community leader from Jamshedpur, now in Dublin — collecting chapters, one project at a time. | |
+| Description line | Software engineer, builder and community leader from Delhi, now in Dublin — collecting chapters, one project at a time. | |
 | Carousel | 16 slides, looping forever, in the order of section D below | |
 | Under each slide | Small title + category tag | |
 
@@ -41,10 +41,11 @@ How to use: for each section, tell me **KEEP / CHANGE / REMOVE** and send the ne
 
 **Text (4 paragraphs):**
 
-1. I'm Arika, a Computer Science student at University College Dublin, from Jamshedpur in India and now based in Dublin.
-2. I'm a software engineer and builder: I intern at Team Pumpkin, I'm building my own startup, Mysl, and I'm the elected Auditor of the UCD International Students Society.
-3. On the side I write songs and poems, and I cook more than I probably should.
-4. This site is a collection of chapters. Click around, and say hi if something catches your eye.
+1. Hi, I'm Arika. I study Computer Science at UCD, I'm from Delhi, and Dublin's been home for a while now.
+2. I genuinely love software. I build websites and apps, usually for problems my friends keep complaining about, in the hope that one of them actually changes something for someone. Some do, some live in my GitHub forever. That's the deal.
+3. I'm also the Auditor of the UCD International Students Society, which mostly means I spend my days planning events, chasing sponsors, and trying to make 6,500 people from all over the world feel a little more at home.
+4. When I'm not doing any of that, I write songs and poems. And when I'm really not doing anything, I scroll LinkedIn for fun. Yes, that's how bored I get.
+5. This site is a bunch of chapters from my life so far. Click around, and if something catches your eye, say hi.
 
 Also shows: email (click to copy), GitHub, LinkedIn.
 
@@ -56,32 +57,37 @@ Also shows: email (click to copy), GitHub, LinkedIn.
 
 Each chapter page has: hero image → tag + big title → **In a line** → **The story** (paragraphs) → **Facts row** → gallery → links → Prev / Next / Back.
 
-### 01. Jamshedpur  ·  *Roots*
+### 01. Delhi  ·  *Roots*
 
-- **Slug / URL:** `jamshedpur` → /chapters/jamshedpur
-- **Hero photo needed:** `public/chapters/jamshedpur/hero.jpg`  (currently a demo image)
-- **In a line:** Where I grew up in India, and where everything started.
+- **Slug / URL:** `delhi` → /chapters/delhi
+- **Hero photo needed:** `public/chapters/delhi/hero.jpg`  (currently a demo image)
+- **In a line:** Where I grew up, and where I first got curious about how things work.
 - **Story:**
-  - Jamshedpur is home. It's where I grew up, and it's where I first got curious about how things work and how to make them better.
-  - Before university I also worked at Starbucks and Burger King in Delhi. Nothing teaches you hustle like a lunch rush, and I still lean on what those jobs taught me about staying calm, being quick and looking after the person in front of you.
+  - Delhi is home. It's where I grew up, and where I first got curious about how things work and how to make them better.
+  - I went to Delhi Public School, R.K. Puram, and spent most of those years either on the basketball court or at a Model UN conference, arguing about world problems in a borrowed blazer. Somewhere between the two, I learned how to compete, how to speak up, and how to lose without sulking (mostly).
+  - It's where I learned I could eat chicken momos for the rest of my life and never complain. It's where I learned that some people feel like home. And it's where I figured out how a city can hold every version of you at once.
+  - If you want to know me better, go visit Delhi.
 - **Facts shown:**
-  - Place: Jamshedpur, India
+  - Place: Delhi, India
+  - School: Delhi Public School, R.K. Puram
+  - Growing up: Basketball court & Model UN
   - Earlier jobs: Starbucks & Burger King, Delhi
-- **Gallery photos needed (3):** `1.jpg` (caption: **⚠ TODO: caption**), `2.jpg` (caption: **⚠ TODO: caption**), `3.jpg` (caption: **⚠ TODO: caption**)
+- **Gallery photos needed (3):** `1.jpg`, `2.jpg`, `3.jpg`
 - **Your call:** KEEP / CHANGE / REMOVE → ______
 
 ### 02. UCD  ·  *University*
 
 - **Slug / URL:** `ucd` → /chapters/ucd
 - **Hero photo needed:** `public/chapters/ucd/hero.jpg`  (currently a demo image)
-- **In a line:** BSc Computer Science (Honours) at University College Dublin.
+- **In a line:** Computer Science at University College Dublin, 2025–2029.
 - **Story:**
-  - I'm studying Computer Science at UCD, 2025 to 2029. First year was a proper introduction to C: pointers, linked lists, file I/O and sorting. It's humbling in the best way.
-  - Outside lectures I'm Events Officer at UCD Netsoc, where I organised an AMD office visit together with Elecsoc. I'm also a Microsoft Student Ambassador and a member of Rewriting the Code.
+  - I'm studying Computer Science at UCD. First year has mostly been me playing around with languages and seeing what each one teaches you.
+  - I started with Scheme, which completely rewired how I think about recursion and functions. Then came C: pointers, linked lists, file I/O, sorting algorithms, and a lot of segfaults. Python and NumPy were the fun part, where suddenly arrays and data started feeling easy.
+  - I also picked up some introductory economics along the way. Outside class, I'm part of Rewriting the Code, a community for women in tech.
 - **Facts shown:**
   - Degree: BSc Computer Science (Honours)
   - Years: 2025 – 2029
-  - Roles: Events Officer, Netsoc · Microsoft Student Ambassador
+  - Played with: Scheme · C · Python · NumPy
 - **Gallery photos needed (3):** `1.jpg`, `2.jpg`, `3.jpg`
 - **Your call:** KEEP / CHANGE / REMOVE → ______
 
@@ -95,7 +101,7 @@ Each chapter page has: hero image → tag + big title → **In a line** → **Th
   - I try to pay it forward by building things and running things that help other people get started too.
 - **Facts shown:**
   - Type: Merit-based scholarship
-- **Gallery photos needed (3):** `1.jpg`, `2.jpg`, `3.jpg`
+- **Gallery photos needed (0):** 
 - **Your call:** KEEP / CHANGE / REMOVE → ______
 
 ### 04. ISS Auditor  ·  *Community*
@@ -128,19 +134,21 @@ Each chapter page has: hero image → tag + big title → **In a line** → **Th
 - **Gallery photos needed (4):** `1.jpg`, `2.jpg`, `3.jpg`, `4.jpg`
 - **Your call:** KEEP / CHANGE / REMOVE → ______
 
-### 06. Team Pumpkin  ·  *Work*
+### 06. Part Time  ·  *Work*
 
-- **Slug / URL:** `team-pumpkin` → /chapters/team-pumpkin
-- **Hero photo needed:** `public/chapters/team-pumpkin/hero.jpg`  (currently a demo image)
-- **In a line:** My first software engineering internship, shipping a full client website.
+- **Slug / URL:** `part-time` → /chapters/part-time
+- **Hero photo needed:** `public/chapters/part-time/hero.jpg`  (currently a demo image)
+- **In a line:** Two part-time jobs alongside my degree: sales at CPM Ireland and software at Team Pumpkin.
 - **Story:**
-  - Since May 2026 I've been a Software Engineering Intern at Team Pumpkin, working in an agile team with a React/JavaScript frontend and a Python backend.
-  - I built and shipped a full client website, which is a very particular kind of satisfying: real people, real deadline, real feedback.
+  - Alongside my degree, I've had two part-time jobs: one in sales, one in software.
+  - From January to April 2026 I was a Direct Sales Representative at CPM Ireland. Direct sales means talking to real people, face to face, and asking for the sale. Having worked at Starbucks and Burger King in Delhi first, I already knew the rush. This was a different kind of hustle, and a very fast way to learn how to listen. I finished at roughly 110% of my sales target, which I'm quietly pleased about.
+  - Since May 2026 I've been a Software Engineering Intern at Team Pumpkin, working in an agile team with a React/JavaScript frontend and a Python backend. I built and shipped a full client website, which is a very particular kind of satisfying: real people, real deadline, real feedback.
 - **Facts shown:**
-  - Since: May 2026
-  - Role: Software Engineering Intern
+  - CPM Ireland: Direct Sales Representative · Jan – Apr 2026
+  - Result: ~110% of sales target
+  - Team Pumpkin: Software Engineering Intern · since May 2026
   - Stack: React, JavaScript, Python
-- **Gallery photos needed (3):** `1.jpg`, `2.jpg`, `3.jpg`
+- **Gallery photos needed (1):** `1.jpg`
 - **Your call:** KEEP / CHANGE / REMOVE → ______
 
 ### 07. Mysl  ·  *Startup*
@@ -227,7 +235,7 @@ Each chapter page has: hero image → tag + big title → **In a line** → **Th
 - **Hero photo needed:** `public/chapters/deoghar/hero.jpg`  (currently a demo image)
 - **In a line:** 196 devices, a village classroom and the work I'm proudest of.
 - **Story:**
-  - Before any of the software, there was a device drive back home. We collected 196 devices from people who no longer needed them and gave them to people who did, and raised around €5,000 for internet and power, because a laptop with no connection is just a very flat paperweight.
+  - Before any of the software, there was a device drive in India. We collected 196 devices from people who no longer needed them and gave them to people who did, and raised around €5,000 for internet and power, because a laptop with no connection is just a very flat paperweight.
   - Then I went to Deoghar, a village, and stayed for more than three months to teach computer basics. Over 500 people came through, kids and older people alike. Some had never touched a computer. We started from 'this is how you turn it on'.
   - I think about those months constantly. They're the reason I care so much about the person on the other side of the screen, and why I want the things I build to help someone land on their feet.
 - **Facts shown:**
